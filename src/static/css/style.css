@@ -1691,12 +1691,12 @@ article-card-journal,
 }
 
 /* manuscript */
-.ajps-container {
+.ajet-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.ajps-journal-title {
+.ajet-journal-title {
     text-align: left;
     font-weight: bold;
     margin-bottom: 10px;
@@ -1704,14 +1704,14 @@ article-card-journal,
     font-weight: 600;
 }
 
-.ajps-issn {
+.ajet-issn {
     text-align: left;
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
 }
 
-.ajps-section-title {
+.ajet-section-title {
     font-weight: bold;
     margin: 25px 0 10px 0;
     font-size: 1.1em;
@@ -1719,65 +1719,65 @@ article-card-journal,
     padding-bottom: 5px;
 }
 
-.ajps-subsection-title {
+.ajet-subsection-title {
     font-weight: 600;
     margin: 20px 0 8px 0;
     font-size: 16px;
 }
 
-.ajps-list {
+.ajet-list {
     margin-top: 5px;
     padding-left: 25px;
 }
 
-.ajps-list-item {
+.ajet-list-item {
     margin-bottom: 8px;
     font-size: 16px;
 }
-.ajps-paragraph {
+.ajet-paragraph {
     font-size: 16px;
 }
-.ajps-strong {
+.ajet-strong {
     font-size: 16px;
 }
 
-.ajps-indent {
+.ajet-indent {
     margin-left: 25px;
 }
 
-.ajps-fee-table {
+.ajet-fee-table {
     width: 100%;
     border-collapse: collapse;
     margin: 15px 0;
     font-size: 0.95em;
 }
 
-.ajps-fee-table th,
-.ajps-fee-table td {
+.ajet-fee-table th,
+.ajet-fee-table td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
 }
 
-.ajps-fee-table th {
+.ajet-fee-table th {
     background-color: #f2f2f2;
 }
 
-.ajps-editorial-board {
+.ajet-editorial-board {
     margin-top: 25px;
 }
 
-.ajps-board-member {
+.ajet-board-member {
     margin-bottom: 10px;
     line-height: 1.4;
 }
 
-.ajps-paragraph {
+.ajet-paragraph {
     margin-bottom: 14px;
     text-align: justify;
 }
 
-.ajps-note {
+.ajet-note {
     font-style: italic;
     color: #555;
 }
