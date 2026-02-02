@@ -801,11 +801,11 @@ footer {
 }
 
 .pub-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 15px;
-    max-width: 100%;
-    overflow-x: visible;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .pub-card {
@@ -814,6 +814,9 @@ footer {
     border: 1px solid #eee;
     padding: 15px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .pub-vol {
@@ -827,6 +830,11 @@ footer {
     margin-bottom: 10px;
     font-weight: bold;
     color: #1e73be;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .pub-abstract {
@@ -835,9 +843,11 @@ footer {
     line-height: 1.6;
     color: #555;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    flex-grow: 1;
+    word-break: break-word;
 }
 
 .pub-abstract strong {
@@ -851,11 +861,15 @@ footer {
 }
 
 .pub-meta {
-    margin-top: 15px;
-    font-size: 14px;
+    margin-top: auto;
+    padding-top: 10px;
+    font-size: 12px;
     color: #666;
     display: flex;
     align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .pub-meta img {
@@ -920,15 +934,12 @@ footer {
     }
 
     .pub-grid {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        max-width: 1200px;
-        margin: 0 auto;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
     }
 
     .pub-card {
-        flex: 0 0 calc(50% - 10px);
+        width: 100%;
     }
 
     .blue-box {
@@ -942,27 +953,11 @@ footer {
     }
 }
 
-@media (min-width: 768px) {
-    .pub-grid {
-        grid-template-columns: repeat(2, 1fr); /* Changed from 3 to 2 */
-        gap: 1.5rem;
-    }
-}
-
-@media (min-width: 1440px) {
-    .pub-grid {
-        grid-template-columns: repeat(2, 1fr); /* Changed from 3 to 2 */
-    }
-}
-
 /* Desktop and larger screens */
 @media (min-width: 992px) {
     .pub-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .pub-card {
-        flex: 0 0 calc(33.333% - 20px);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
     }
 
     .blue-box {
@@ -1780,6 +1775,137 @@ article-card-journal,
 .ajps-note {
     font-style: italic;
     color: #555;
+}
+
+/* Call for Papers Banner */
+.call-for-papers-banner {
+    background: linear-gradient(135deg, #1e73be 0%, #2a166f 100%);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.cfp-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.cfp-text {
+    text-align: center;
+    color: white;
+}
+
+.cfp-text h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #fff601;
+}
+
+.cfp-volume {
+    font-size: 14px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.cfp-description {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    max-width: 400px;
+}
+
+.cfp-btn {
+    display: inline-block;
+    background-color: #fff601;
+    color: #2a166f;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.cfp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cfp-image {
+    width: 100%;
+    max-width: 180px;
+}
+
+.cfp-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cfp-download {
+    display: block;
+    margin-top: 8px;
+    color: #fff601;
+    font-size: 12px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.cfp-download:hover {
+    color: white;
+}
+
+/* Tablet and Desktop styles for CFP banner */
+@media (min-width: 768px) {
+    .call-for-papers-banner {
+        padding: 15px 25px;
+    }
+
+    .cfp-content {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .cfp-text {
+        text-align: left;
+    }
+
+    .cfp-text h2 {
+        font-size: 20px;
+    }
+
+    .cfp-description {
+        font-size: 14px;
+    }
+
+    .cfp-image {
+        flex-shrink: 0;
+        max-width: 160px;
+    }
+}
+
+/* Desktop styles for CFP banner */
+@media (min-width: 1024px) {
+    .call-for-papers-banner {
+        padding: 20px 40px;
+    }
+
+    .cfp-text h2 {
+        font-size: 22px;
+    }
+
+    .cfp-image {
+        max-width: 200px;
+    }
 }
 
 /* About-container */
