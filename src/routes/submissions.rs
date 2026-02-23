@@ -129,7 +129,7 @@ pub async fn process_submission(mut payload: Multipart) -> Result<HttpResponse, 
         "Abstract is required".to_string(),
     ))?;
     let pdf_url = pdf_filename.ok_or(SubmissionError::ValidationError(
-        "PDF file is required".to_string(),
+        "Word or Excel files are required, check the uploaded file format".to_string(),
     ))?;
 
     // Create submission object
